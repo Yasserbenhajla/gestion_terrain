@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Réservation de Terrain de Football</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 50px;
+        }
+        h2 {
+            margin-bottom: 30px;
+        }
+        
+        select {
+            font-size: 1.25rem; 
+            padding: 10px;
+            border-radius: 5px; 
+            background-color: #fff;
+            border: 1px solid #ccc; 
+        }
+
+        option {
+            font-size: 1.25rem; 
+            padding: 10px; 
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2 class="text-center">Gestion des Réservations</h2>
+                    <form action="reservation.php" method="post">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="heure_debut">Heure de Début</label>
+                            <input type="time" class="form-control" id="heure_debut" name="heure_debut" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="heure_fin">Heure de Fin</label>
+                            <input type="time" class="form-control" id="heure_fin" name="heure_fin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="terrain">Terrain</label>
+                            <select name="terrain" id="terrain">
+                                <option value="Maracana">maracana</option>
+                                <option value="MC27">MC27</option>
+                                <option value="MC27">Wembly</option>
+                                <option value="CampNo">CampNo</option>
+                            </select>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation_id">ID de la Réservation (pour modification/suppression)</label>
+                            <input type="number" class="form-control" id="reservation_id" name="reservation_id">
+                        </div>
+                        <button type="submit" name="action" value="add" class="btn btn-primary btn-block">Réserver</button>
+                        <button type="submit" name="action" value="update" class="btn btn-warning btn-block">Modifier</button>
+                        <button type="submit" name="action" value="delete" class="btn btn-danger btn-block">Supprimer</button>
+                    </form>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
